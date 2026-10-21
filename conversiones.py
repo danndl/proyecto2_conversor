@@ -7,7 +7,7 @@ from validaciones import DIGITOS, BASES
 
 
 def a_decimal(texto: str, base: int) -> tuple[int, list[str]]:
-    """Convierte una cadena validada a un entero decimal (Notación Posicional)."""
+    """Convierte una cadena validada a un entero decimal"""
     total = 0
     pasos = []
 

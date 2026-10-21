@@ -25,16 +25,16 @@ def seleccionar_base(titulo: str) -> str | None:
         print("2. Octal")
         print("3. Decimal")
         print("4. Hexadecimal")
-        print("0. Volver al menú principal")
+        print("5. Volver al menú principal")
 
         op = input("Seleccione una opción: ").strip()
-        if op == "0":
+        if op == "5":
             return None
         try:
-            validar_opcion(op, ["1", "2", "3", "4", "0"])
+            validar_opcion(op, ["1", "2", "3", "4", "5"])
             return NOMBRES_BASES[op]
         except ValueError as e:
-            print(f"\n❌ {e}")
+            print(f"\n {e}")
 
 
 def menu_conversion():
@@ -48,7 +48,7 @@ def menu_conversion():
         return
 
     if origen == destino:
-        print("\n❌ Las bases de origen y destino deben ser distintas.")
+        print("\n Las bases de origen y destino deben ser distintas.")
         return
 
     print("\n==================================================")
@@ -83,7 +83,7 @@ def menu_conversion():
             input("\nPresione Enter para continuar...")
             break
         except ValueError as e:
-            print(f"❌ {e}\n")
+            print(f" {e}\n")
 
 
 def menu_historial():
@@ -112,7 +112,7 @@ def menu_historial():
 
         if op == "1":
             if not hist:
-                print("\n❌ El historial está vacío.")
+                print("\n El historial está vacío.")
                 continue
             reg_str = input("Ingrese el número del registro a eliminar: ").strip()
             try:
@@ -120,17 +120,17 @@ def menu_historial():
                 eliminar_registro(idx)
                 print("\nRegistro eliminado correctamente.")
             except ValueError as e:
-                print(f"\n❌ {e}")
+                print(f"\n {e}")
         elif op == "2":
             if not hist:
-                print("\n❌ El historial está vacío.")
+                print("\n El historial está vacío.")
                 continue
             vaciar_historial()
             print("\nHistorial vaciado correctamente.")
         elif op == "3":
             break
         else:
-            print("\n❌ Opción inválida. Seleccione 1, 2 o 3.")
+            print("\n Opción inválida. Seleccione 1, 2 o 3.")
 
 
 def menu_practica():
@@ -171,14 +171,14 @@ def menu_practica():
                     input("\nPresione Enter para continuar...")
                     break
                 except ValueError as e:
-                    print(f"❌ {e}")
+                    print(f" {e}")
         elif op == "2":
             practica.reiniciar_estadisticas()
             print("\nPuntuación reiniciada.")
         elif op == "3":
             break
         else:
-            print("\n❌ Opción inválida.")
+            print("\n Opción inválida.")
 
 
 def iniciar_programa():
@@ -204,4 +204,4 @@ def iniciar_programa():
             print("\n¡Programa finalizado!")
             break
         else:
-            print("\n❌ Opción inválida. Seleccione una opción entre 1 y 4.")
+            print("\n Opción inválida. Seleccione una opción entre 1 y 4.")
