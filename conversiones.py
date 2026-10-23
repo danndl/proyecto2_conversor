@@ -59,20 +59,20 @@ def realizar_conversion(texto: str, origen_nombre: str, destino_nombre: str) -> 
     base_destino = BASES[destino_nombre]
     pasos = []
 
-    # Caso 1: Origen ya es Decimal
+    # Origen es Decimal
     if base_origen == 10:
         num_decimal = int(texto)
         resultado, pasos_proc = desde_decimal(num_decimal, base_destino)
         pasos.extend(pasos_proc)
         return resultado, pasos
 
-    # Caso 2: Destino es Decimal
+    # Destino es Decimal
     if base_destino == 10:
         num_decimal, pasos_proc = a_decimal(texto, base_origen)
         pasos.extend(pasos_proc)
         return str(num_decimal), pasos
 
-    # Caso 3: Ambas distintas de Decimal (Origen -> Decimal -> Destino)
+    #Ambas distintas de decimal
     pasos.append(f"ETAPA 1: {origen_nombre.upper()} A DECIMAL")
     num_decimal, pasos_etapa1 = a_decimal(texto, base_origen)
     pasos.extend(pasos_etapa1)

@@ -1,3 +1,4 @@
+"""validaciones necesarias"""
 BASES = {
     "Binario": 2,
     "Octal": 8,
@@ -9,7 +10,7 @@ DIGITOS = "0123456789ABCDEF"
 
 
 def validar_numero(texto: str, nombre_base: str) -> str:
-    """Valida que el número ingresado cumpla las reglas de la base especificada."""
+    """Valida que el numero que se ingresado cumpla las reglas de la base especificada"""
     if nombre_base not in BASES:
         raise ValueError("La base seleccionada no es válida.")
 
@@ -32,7 +33,7 @@ def validar_numero(texto: str, nombre_base: str) -> str:
 
 
 def validar_entrada(texto: str, origen: str, destino: str) -> str:
-    """Valida las bases y el número ingresado para la conversión."""
+    """Valida las bases y el nimero ingresado para la conversión"""
     if origen not in BASES or destino not in BASES:
         raise ValueError("Seleccione bases válidas.")
 
@@ -43,14 +44,14 @@ def validar_entrada(texto: str, origen: str, destino: str) -> str:
 
 
 def validar_opcion(texto: str, opciones: list[str]) -> str:
-    """Valida que la opción elegida se encuentre en la lista permitida."""
+    """Valida que la opción que se eligio se encuentre en la lista permitida."""
     if texto not in opciones:
         raise ValueError("Opción inválida. Seleccione una de las opciones válidas.")
     return texto
 
 
 def validar_indice(texto: str, cantidad: int) -> int:
-    """Valida el número de registro a eliminar del historial."""
+    """Valida el numero de registro a eliminar del historial."""
     if cantidad == 0:
         raise ValueError("El historial está vacío.")
 

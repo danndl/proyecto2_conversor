@@ -1,6 +1,4 @@
-"""
-Módulo para la gestión del historial de conversiones mediante listas en memoria.
-"""
+"""historial de conversiones"""
 
 historial_lista = []
 
@@ -16,16 +14,16 @@ def agregar_registro(entrada: str, origen: str, destino: str, resultado: str):
 
 
 def obtener_historial() -> list[dict]:
-    """Retorna la lista completa del historial."""
+    """devueleve la lista del historial."""
     return historial_lista
 
 
 def eliminar_registro(indice: int):
-    """Elimina un registro del historial según el índice base cero."""
+    """Elimina un registro del historial"""
     if 0 <= indice < len(historial_lista):
         historial_lista.pop(indice)
 
 
 def vaciar_historial():
-    """Limpia todo el historial de la sesión."""
+    """Limpia todo el historial"""
     historial_lista.clear()

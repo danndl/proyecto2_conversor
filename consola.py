@@ -1,7 +1,3 @@
-"""
-Módulo de Consola: Interfaz de usuario por menús interactivos.
-"""
-
 from validaciones import validar_opcion, validar_entrada, validar_indice
 from conversiones import realizar_conversion
 from historial import agregar_registro, obtener_historial, eliminar_registro, vaciar_historial

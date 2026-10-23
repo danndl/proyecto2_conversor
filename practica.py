@@ -1,6 +1,4 @@
-"""
-Módulo del Modo de Práctica con ejercicios aleatorios entre 0 y 255.
-"""
+"""practica con ejercicios random entre 0 y 255"""
 
 import random
 from validaciones import BASES
@@ -11,20 +9,20 @@ respondidos = 0
 
 
 def obtener_estadisticas() -> tuple[int, int, float]:
-    """Retorna los aciertos, ejercicios respondidos y el porcentaje."""
+    """devueleve los aciertos, ejercicios respondidos y el porcentaje."""
     porcentaje = (aciertos / respondidos * 100) if respondidos > 0 else 0.0
     return aciertos, respondidos, porcentaje
 
 
 def reiniciar_estadisticas():
-    """Reinicia la puntuación del modo práctica."""
+    """reinicia la puntuación del modo prcctica."""
     global aciertos, respondidos
     aciertos = 0
     respondidos = 0
 
 
 def generar_ejercicio() -> tuple[str, str, str, str]:
-    """Genera un ejercicio aleatorio con su valor de origen, origen, destino y respuesta esperada."""
+    """genera un ejercicio aleatorio con su valor de origen, destino y la respuesta"""
     num_decimal = random.randint(0, 255)
     nombres_bases = list(BASES.keys())
     origen = random.choice(nombres_bases)
@@ -41,7 +39,7 @@ def generar_ejercicio() -> tuple[str, str, str, str]:
 
 
 def registrar_respuesta(es_correcta: bool):
-    """Suma al contador de respuestas de la sesión."""
+    """Suma al contador de respuestas de la sesion"""
     global aciertos, respondidos
     respondidos += 1
     if es_correcta:
