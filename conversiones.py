@@ -1,13 +1,8 @@
-"""
-Módulo de Conversiones de Sistemas Numéricos.
-Implementa el algoritmo de Notación Posicional y Divisiones Sucesivas.
-"""
-
 from validaciones import DIGITOS, BASES
 
 
 def a_decimal(texto: str, base: int) -> tuple[int, list[str]]:
-    """Convierte una cadena validada a un entero decimal"""
+    #convierte una cadena validada a un entero decimal
     total = 0
     pasos = []
 
@@ -25,7 +20,7 @@ def a_decimal(texto: str, base: int) -> tuple[int, list[str]]:
 
 
 def desde_decimal(numero: int, base: int) -> tuple[str, list[str]]:
-    """Convierte un entero no negativo mediante divisiones sucesivas."""
+    #Convierte un entero no negativo mediante divisiones sucesivas
     if numero == 0:
         return "0", ["El número es cero.", "Su representación en la base de destino es 0."]
 
@@ -52,27 +47,24 @@ def desde_decimal(numero: int, base: int) -> tuple[str, list[str]]:
 
 
 def realizar_conversion(texto: str, origen_nombre: str, destino_nombre: str) -> tuple[str, list[str]]:
-    """
-    Orquesta las 12 conversiones utilizando Decimal como base intermedia si corresponde.
-    """
     base_origen = BASES[origen_nombre]
     base_destino = BASES[destino_nombre]
     pasos = []
 
-    # Origen es Decimal
+    #origen es Decimal
     if base_origen == 10:
         num_decimal = int(texto)
         resultado, pasos_proc = desde_decimal(num_decimal, base_destino)
         pasos.extend(pasos_proc)
         return resultado, pasos
 
-    # Destino es Decimal
+    #destino es decimal
     if base_destino == 10:
         num_decimal, pasos_proc = a_decimal(texto, base_origen)
         pasos.extend(pasos_proc)
         return str(num_decimal), pasos
 
-    #Ambas distintas de decimal
+    #ambas son distintas de decimal
     pasos.append(f"ETAPA 1: {origen_nombre.upper()} A DECIMAL")
     num_decimal, pasos_etapa1 = a_decimal(texto, base_origen)
     pasos.extend(pasos_etapa1)

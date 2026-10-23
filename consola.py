@@ -12,7 +12,7 @@ NOMBRES_BASES = {
 
 
 def seleccionar_base(titulo: str) -> str | None:
-    """Despliega el menú de selección de bases."""
+   #menu selección de bases
     while True:
         print("\n==================================================")
         print(f"{titulo}")
@@ -34,7 +34,7 @@ def seleccionar_base(titulo: str) -> str | None:
 
 
 def menu_conversion():
-    """Gestiona la opción de realizar una conversión."""
+    #la opcion a realizar una conversión.
     origen = seleccionar_base("SELECCIONE LA BASE DE ORIGEN")
     if origen is None:
         return
@@ -51,7 +51,7 @@ def menu_conversion():
     print(f"CONVERSIÓN: {origen.upper()} A {destino.upper()}")
     print("==================================================")
     print("Ingrese un entero no negativo de hasta 128 dígitos.")
-    print("Escriba 'volver' para regresar al menú principal.")
+
 
     while True:
         num_str = input("Número a convertir: ").strip()
@@ -83,7 +83,7 @@ def menu_conversion():
 
 
 def menu_historial():
-    """Gestiona la visualización, eliminación y vaciado del historial."""
+    #historial
     while True:
         hist = obtener_historial()
         print("\n==================================================")
@@ -130,7 +130,7 @@ def menu_historial():
 
 
 def menu_practica():
-    """Gestiona el flujo del modo de práctica."""
+    #modo de practica
     while True:
         aciertos, respondidos, porcentaje = practica.obtener_estadisticas()
         print("\n==================================================")
@@ -178,7 +178,7 @@ def menu_practica():
 
 
 def iniciar_programa():
-    """Punto de inicio del menú principal."""
+    #menu principal
     while True:
         print("\n==================================================")
         print("CONVERSOR DE SISTEMAS NUMÉRICOS")
